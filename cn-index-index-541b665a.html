@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 体育与泛娱乐平台</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f2f4f7;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1d2b36;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.25rem;
+        }
+
+        /* Hero */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            border: 1px solid #e3e9f0;
+            padding: 3rem 2.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.75rem;
+            color: #0f1a26;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #52697a;
+            max-width: 600px;
+            margin: 0 auto 1.8rem;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: #eef3f9;
+            border: 1px solid #d0dce8;
+            border-radius: 40px;
+            padding: 0.4rem 1.5rem;
+            font-size: 0.9rem;
+            color: #2f4a5d;
+            letter-spacing: 0.02em;
+        }
+
+        /* 卡片通用 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            border: 1px solid #e3e9f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            padding: 1.8rem 1.5rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            color: #13222e;
+        }
+
+        .card p {
+            color: #3f5667;
+            font-size: 0.95rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f0f4f9;
+            color: #1a3b4e;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.1rem 0.7rem;
+            border-radius: 20px;
+            margin-bottom: 0.5rem;
+            border: 1px solid #d9e2ec;
+        }
+
+        /* 说明区 / 双列 */
+        .section-wrap {
+            background: #ffffff;
+            border-radius: 24px;
+            border: 1px solid #e3e9f0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            padding: 2rem 2.5rem;
+        }
+
+        .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        .two-col > div {
+            flex: 1 1 250px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0f1a26;
+            border-left: 4px solid #8a9fb0;
+            padding-left: 0.8rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #1f3545;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item .a {
+            color: #4a6277;
+            font-size: 0.93rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid #dce5ef;
+            margin-top: 0.1rem;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .foot-note {
+            background: #ffffff;
+            border-radius: 18px;
+            border: 1px solid #e3e9f0;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #3e5a6e;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .foot-note a {
+            color: #1a3f57;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b4c6d6;
+        }
+
+        .foot-note a:hover {
+            border-bottom-color: #1a3f57;
+        }
+
+        .small-meta {
+            margin-top: 0.8rem;
+            color: #758d9f;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #dce4ed;
+            margin: 0.5rem 0 1rem;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section-wrap {
+                padding: 1.5rem 1.2rem;
+            }
+            .two-col {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>华体会 · 体育与泛娱乐</h1>
+        <div class="sub">围绕赛事数据、实时资讯与互动场景，为爱好者提供结构化的信息聚合与轻量化工具。</div>
+        <div class="badge">⚡ 实时数据 · 赛事追踪 · 社区讨论</div>
+    </div>
+
+    <!-- 优势区 3卡片 -->
+    <div class="card-grid">
+        <div class="card">
+            <span class="tag">数据</span>
+            <h3>多维赛事统计</h3>
+            <p>覆盖足球、篮球、网球等主流联赛的实时比分、历史交锋及球员数据，支持多维度交叉筛选。</p>
+        </div>
+        <div class="card">
+            <span class="tag">内容</span>
+            <h3>资讯与解读</h3>
+            <p>整合赛前前瞻、赛后复盘及深度专栏，内容由体育编辑与社区贡献者共同维护，保持信息密度。</p>
+        </div>
+        <div class="card">
+            <span class="tag">互动</span>
+            <h3>讨论与预测</h3>
+            <p>提供话题板块与轻量预测功能，用户可围绕比赛走向、球员表现等展开讨论，氛围友好。</p>
+        </div>
+    </div>
+
+    <!-- 说明区：双列 左侧场景+右侧补充 -->
+    <div class="section-wrap">
+        <div class="two-col">
+            <div>
+                <div class="section-title">典型使用场景</div>
+                <ul style="list-style: none; padding-left: 0; color: #3f5667;">
+                    <li style="margin-bottom: 0.7rem;">• 赛前查看双方近期状态与伤停信息，辅助观赛准备。</li>
+                    <li style="margin-bottom: 0.7rem;">• 赛中间歇快速浏览实时数据板，无需频繁切换页面。</li>
+                    <li style="margin-bottom: 0.7rem;">• 赛后通过数据图表与专栏回顾关键节点，延伸讨论。</li>
+                    <li>• 利用社区话题发现不同视角的分析与观点。</li>
+                </ul>
+            </div>
+            <div>
+                <div class="section-title">关于华体会</div>
+                <p style="margin-bottom: 0.8rem;">平台以体育信息聚合为基础，逐步拓展至泛娱乐领域的内容整合。通过结构化的展示和轻社交元素，降低信息获取门槛，同时保持内容真实性与专业性。</p>
+                <p>无论是资深球迷还是偶尔关注的用户，都能在 <a href="https://cn-index-huatihui.com" style="color:#1a3f57; text-decoration: underline; text-underline-offset: 3px;">华体会</a> 找到适合自己的信息切入点。不追求夸张噱头，只关注赛事本身与用户的真实需求。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="section-wrap">
+        <div class="section-title">常见问题摘要</div>
+        <div class="faq-item">
+            <div class="q">数据更新频率如何？</div>
+            <div class="a">主要联赛数据保持实时更新，延迟控制在较低水平；历史数据每日同步。部分小众联赛采用定时拉取模式。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">是否需要注册才能浏览？</div>
+            <div class="a">基础数据与资讯无需注册即可浏览。参与社区互动、创建预测或收藏内容需要简易注册，注册流程简洁。</div>
+        </div>
+        <div class="faq-item">
+            <div class="q">内容来源是否可靠？</div>
+            <div class="a">赛事数据来源于官方统计渠道及合作数据商；资讯内容由编辑团队与认证作者提供，社区内容有基本审核机制。</div>
+        </div>
+        <div style="margin-top: 1.2rem; font-size: 0.9rem; color: #4f6a7e;">
+            <a href="https://cn-index-huatihui.com" style="color:#1a3f57; text-decoration: underline; text-underline-offset: 3px;">华体会</a> 始终以信息质量为优先，持续优化产品体验。
+        </div>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="foot-note">
+        <p style="margin-bottom: 0.2rem;">更多赛事数据、社区讨论与泛娱乐内容，欢迎了解 <a href="https://cn-index-huatihui.com">华体会</a> 。</p>
+        <p style="font-size: 0.85rem; color: #6b8398; margin-top: 0.3rem;">基于真实数据与用户需求构建的信息平台</p>
+    </div>
+
+    <div class="small-meta">
+        — 简洁 · 专业 · 信息驱动 —
+    </div>
+</div>
+</body>
+</html>
