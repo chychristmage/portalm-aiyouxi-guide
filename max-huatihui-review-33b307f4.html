@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 主题信息卡片</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+      line-height: 1.7;
+      color: #1e2a3a;
+      padding: 2rem 1.2rem;
+    }
+
+    .page {
+      max-width: 760px;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02), 0 2px 4px rgba(0,0,0,0.02);
+      padding: 3rem 2rem 4rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #0b1c2e;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+      font-weight: 550;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #4d6278;
+      margin-bottom: 2.8rem;
+      border-left: 4px solid #7a8fa3;
+      padding-left: 1rem;
+    }
+
+    /* 主视觉区（卡片） */
+    .hero-card {
+      background: #eef3f8;
+      border-radius: 28px;
+      padding: 2.2rem 2rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+    }
+
+    .hero-card p {
+      font-size: 1.08rem;
+      color: #1f3448;
+    }
+
+    .hero-card strong {
+      font-weight: 550;
+      color: #003459;
+    }
+
+    .hero-link {
+      display: inline-block;
+      margin-top: 1.2rem;
+      background: #1e2a3a;
+      color: #fff;
+      padding: 0.6rem 1.6rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 450;
+      font-size: 0.95rem;
+      transition: background 0.15s;
+    }
+    .hero-link:hover {
+      background: #2d4055;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2.4rem 0;
+    }
+
+    .card {
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 1.6rem 1.4rem;
+      border: 1px solid #e9edf2;
+      transition: box-shadow 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #0f293e;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #2b3f53;
+      line-height: 1.6;
+    }
+
+    .badge {
+      background: #dce3ec;
+      font-size: 0.7rem;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      color: #1f384f;
+      font-weight: 450;
+      margin-left: 0.2rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      margin-top: 2.6rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      color: #0b1c2e;
+      border-bottom: 1px solid #d8e0e9;
+      padding-bottom: 0.3rem;
+    }
+
+    .natural-paragraph {
+      background: #f9fcff;
+      padding: 1.6rem 1.8rem;
+      border-radius: 24px;
+      margin: 1.8rem 0;
+    }
+
+    .natural-paragraph p {
+      font-size: 1rem;
+      color: #1b3144;
+    }
+
+    .natural-paragraph a {
+      color: #003459;
+      text-decoration: none;
+      border-bottom: 1px solid #b8cadc;
+      font-weight: 450;
+    }
+    .natural-paragraph a:hover {
+      border-bottom-color: #003459;
+    }
+
+    .faq-mini {
+      margin-top: 2.8rem;
+      background: #f0f4f9;
+      border-radius: 28px;
+      padding: 1.8rem 2rem;
+    }
+
+    .faq-mini dt {
+      font-weight: 500;
+      color: #0f2a3f;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    .faq-mini dd {
+      margin: 0.3rem 0 0 0;
+      color: #2d425b;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .faq-mini dt:first-of-type {
+      margin-top: 0;
+    }
+
+    .footnote {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #5f738a;
+      border-top: 1px solid #e0e8f0;
+      padding-top: 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e0e8f0;
+      margin: 2rem 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      body { padding: 1rem 0.8rem; }
+      .page { padding: 2rem 1.2rem; }
+      h1 { font-size: 1.8rem; }
+      .card-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .hero-card { padding: 1.6rem 1.2rem; }
+      .natural-paragraph { padding: 1.2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 主标题 -->
+  <h1>华体会</h1>
+  <div class="subhead">主题 · 日常洞察 · 信息卡片</div>
+
+  <!-- 主视觉卡片 -->
+  <div class="hero-card">
+    <p><strong>华体会</strong> 的内核，是将抽象概念转化为可感知的日常实践。我们关注信息、语言与认知之间的交集，通过结构化的内容呈现，帮助使用者在复杂信息环境中建立清晰的理解路径。不堆砌术语，不制造焦虑，只提供经过梳理的真实素材与观察框架。</p>
+    <a class="hero-link" href="https://max-huatihui.com">华体会</a>
+  </div>
+
+  <!-- 用途卡片 (两列) -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>📋 知识卡片 <span class="badge">结构化</span></h3>
+      <p>将专业内容拆解为可检索的微型模块，适合快速回顾、主题梳理与碎片化学习。每条卡片均标注来源与关联索引。</p>
+    </div>
+    <div class="card">
+      <h3>🧩 场景分析 <span class="badge">方法论</span></h3>
+      <p>基于真实使用场景展开逻辑推演，覆盖信息筛选、决策锚点、语言表达等核心环节。每个场景附有可操作的参考路径。</p>
+    </div>
+    <div class="card">
+      <h3>📌 概念透镜 <span class="badge">认知工具</span></h3>
+      <p>为抽象概念提供多层透视——定义、边界、实例、反例。帮助用户从不同视角审视同一个主题，避免单一化理解。</p>
+    </div>
+    <div class="card">
+      <h3>🔗 脉络图景 <span class="badge">关联网络</span></h3>
+      <p>展示主题之间的隐性连接与交叉影响。通过节点与关系描述，呈现更完整的信息生态，而非孤立的知识点。</p>
+    </div>
+  </div>
+
+  <!-- 适合人群 简洁列表 -->
+  <h2 class="section-title">适合这样的你</h2>
+  <p style="margin-bottom: 1.2rem; color: #1f3448;">如果你经常需要处理信息密度高的内容，或者想建立更系统的思考习惯，华体会的卡片式框架可以作为日常参考。</p>
+  <ul style="list-style: none; padding-left: 0; margin: 0 0 2rem 0; display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem;">
+    <li style="background: #eef3f8; border-radius: 30px; padding: 0.3rem 1rem; font-size: 0.9rem; color: #1f3448;">✓ 内容创作者</li>
+    <li style="background: #eef3f8; border-radius: 30px; padding: 0.3rem 1rem; font-size: 0.9rem; color: #1f3448;">✓ 终身学习者</li>
+    <li style="background: #eef3f8; border-radius: 30px; padding: 0.3rem 1rem; font-size: 0.9rem; color: #1f3448;">✓ 知识管理实践者</li>
+    <li style="background: #eef3f8; border-radius: 30px; padding: 0.3rem 1rem; font-size: 0.9rem; color: #1f3448;">✓ 信息架构爱好者</li>
+  </ul>
+
+  <!-- 自然链接段落 -->
+  <div class="natural-paragraph">
+    <p>在信息过载的时代，清晰比新奇更重要。<a href="https://max-huatihui.com">华体会</a> 提供经过筛选和重组的内容单元，不追求面面俱到，只在意每一张卡片是否真的有助于理解。如果你也曾感到碎片信息难以沉淀，不妨从一张卡片开始，逐步搭建属于自己的认知地图。所有卡片均基于公开材料与逻辑推演，不依赖未被证实的数据。</p>
+  </div>
+
+  <!-- FAQ 摘要 (mini) -->
+  <div class="faq-mini">
+    <dl>
+      <dt>华体会的卡片是否支持自由组合？</dt>
+      <dd>是的。每张卡片相对独立，你可以根据兴趣或任务自行排序、关联、增删。卡片索引会定期更新。</dd>
+      <dt>内容偏向理论还是应用？</dt>
+      <dd>两者兼顾。每个主题都包含概念层与操作层，用具体案例或步骤说明抽象观点，不做空洞的总结。</dd>
+      <dt>是否需要专业知识背景？</dt>
+      <dd>不需要。表述上尽量避免过度依赖行话，专业词汇会附带简要说明，希望你读完卡片就能直接使用。</dd>
+    </dl>
+  </div>
+
+  <!-- 页脚 -->
+  <div class="footnote">
+    <span>信息卡片 · 华体会</span>
+    <span>基于开放素材整理 · 持续迭代</span>
+  </div>
+
+  <!-- 占位隐藏种子 (仅用于变化 不显示) -->
+  <!-- seed: 99058128ea18fe8c -->
+
+</div>
+</body>
+</html>
